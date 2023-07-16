@@ -34,10 +34,6 @@ function App() {
   const [noticias] = useCollectionData(query, {idField: 'id'})
 
 
-  
-
-
-
   return (
     <div className="App App-header">
       
@@ -57,27 +53,30 @@ function TabelaNoticias(props) {
     return Object.keys(noticias.dadosNoticias).map( (nomeObjeto) => nomeObjeto ).filter( (nome) => nome.trim() !== ''  ) 
   }
 
-  const [counter, setCounter] = useState(0);
-  useEffect(() => {
-    setCounter((prevCounter) => prevCounter + 1);
-  }, []);
   
   const ListaNoticias = props.noticias[0]
   const nomesSites = pegarNomesNoticiarios(ListaNoticias)
   
+  const [counter, setCounter] = useState(0);
+  useEffect(() => {
+    setCounter((prevCounter) => prevCounter + 1);
+  }, []);
+
   return <>
   <div>
     <div>
-      <ul>Ultimas Vez atualizado:</ul>
-      <ul>{ ListaNoticias.DataPesquisa }</ul>
+      <div>Ultimas Vez atualizado: { ListaNoticias.DataPesquisa }</div>
       <div>
-        { nomesSites.map( noticiario => <BlocoNoticias key={noticiario} contagem={counter} noticiario={noticiario} noticias={ ListaNoticias.dadosNoticias[noticiario]  } /> ) }
+        { nomesSites.map( noticiario => 
+          <BlocoNoticias
+            contagem={counter}
+            noticiario={noticiario} 
+            noticias={ ListaNoticias.dadosNoticias[noticiario] } 
+            /> )}
       </div> 
     </div>
   </div>
-    <div>
-      Carregado!
-    </div>
+    
   </>
 }
 
@@ -86,21 +85,19 @@ function BlocoNoticias(props) {
  
   return ( 
   <>
-    <Accordion defaultActiveKey="0" flush>
-      <Accordion.Item eventKey={ contagem.toString() }>
-        <Accordion.Header>{ noticiario }</Accordion.Header>
-        <Accordion.Body>
-        <section>
-          <header>{ noticiario }</header>
-          <main>
-            { noticias.map(noticia => <NoticiaIndividual noticia={noticia} /> ) }
-          </main>
-          <footer></footer>
-        </section>
-
-        </Accordion.Body>
-      </Accordion.Item>
-    </Accordion>
+    <Accordion className='blocopadrao' >
+        <Accordion.Item eventKey={ contagem.toString() }>
+            <Accordion.Header>{noticiario}</Accordion.Header>
+              <Accordion.Body>
+                <section className='container'>
+                  <main>
+                       { noticias.map( (noticias) =>  < NoticiaIndividual noticia={noticias} /> )}
+                  </main>
+                <footer></footer>
+              </section>
+            </Accordion.Body>
+          </Accordion.Item>
+      </Accordion>  
   </>)
 }
 function NoticiaIndividual(props){
@@ -109,17 +106,18 @@ function NoticiaIndividual(props){
   const linkMateria = props.noticia.linkMateria
   const URLimagem = props.noticia.URLimagem
 
+  if (titulo === 'Vídeos curtos do g1') {
+    return (<></>)
+  }
   
   return(<>
     <div className='divisor'>
-      <picture><img src={URLimagem} /></picture>
+      <picture><img src={URLimagem} alt='Imagem sobre a máteria' /></picture>
       <section>
-        <ul>{titulo}</ul>
-        {subtitulos.map( subtitulo => <ul className='subtitulo'>{ subtitulo }</ul>)}
-        <div className='botaoMateria'><a href={linkMateria}><button>Acessar Conteudo</button></a></div>
+        <div>{titulo}</div>
+        {subtitulos.map( subtitulo => <div className='subtitulo'>{ subtitulo }</div>)}
+        <div className='botaoMateria'><a target="_blank" href={linkMateria} rel="noreferrer"><button>Acessar Conteudo</button></a></div>
       </section>
-      
-      
     </div>
   </>)
 }

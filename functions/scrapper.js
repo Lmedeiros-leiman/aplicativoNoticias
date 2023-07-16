@@ -56,7 +56,6 @@ async function pegardadosCorreioPovo (browser) {
   })
   return dados
 }
-
 async function pegardadosG1 (browser) {
   try {
     const page = await browser.newPage()
@@ -111,11 +110,9 @@ const pegarNoticias = async () => {
     // pega as noticias:
     const CorreioDoPovo = await pegardadosCorreioPovo(browser)
     const G1 = await pegardadosG1(browser)
-    console.log( {CorreioDoPovo, G1})
     // fecha o browser + qualquer website.
     await browser.close()
     return {CorreioDoPovo, G1}
 }
 
 exports.atualizarnoticias = pegarNoticias
-pegarNoticias()
