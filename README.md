@@ -13,13 +13,14 @@ Atualmente o aplicativo busca noticias dos seguites websites:
 > - Correio do Povo
 
 ## Sobre o projeto
+o modelo de visualização poderá ser atualizado no futuro.
 
 O projeto utiliza os servidores do google para executar uma função salva na pasta **functions** na pasta raiz, sendo esta executada a cada hora todos os dias pegando partes do arquivo HTML e salvando os dados no banco de dados na nuvem. 
 
 os dados então são puxados pelo applicativo React na pasta **fronteendapp** e então mostrados para o usuário, caso o usuário mantenha a aba aberta e a função seja executada o conteudo irá ser atualizado o mais rápido possivel, isto pode a vir causar frustações por não haver um aviso prévio.
 
 Imagem do aplicativo em uso:
-![Imagem do app em usi](image.png)
+![Imagem do App em uso](https://github.com/Lmedeiros-leiman/aplicativoNoticias/assets/57924586/f26d62bf-e228-42e1-b9ee-52b192e17d5e)
 
 ## Busca criar um fork?
 
