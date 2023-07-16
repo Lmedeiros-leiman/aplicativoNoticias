@@ -12,13 +12,11 @@ import { useCollectionData } from 'react-firebase-hooks/firestore'
 
 // realiza ações essenciais
 const firebaseConfig = {
-  apiKey: "AIzaSyCnyS_yVsC7LFfiCIP8U64jclOGnwYUhcI",
-  authDomain: "sitesnoticias-webscrapper.firebaseapp.com",
-  projectId: "sitesnoticias-webscrapper",
-  storageBucket: "sitesnoticias-webscrapper.appspot.com",
-  messagingSenderId: "248716292469",
-  appId: "1:248716292469:web:863d10b10a3e8610a5a33c",
-  measurementId: "G-S4EBXSZHQM"
+  /*
+  ...
+  Insira suas credenciais de projeto do firebase aqui...
+  ...
+  */
 }
 firebase.initializeApp(firebaseConfig)
 const db = firebase.firestore()
