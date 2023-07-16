@@ -25,10 +25,11 @@ exports.atualizarbd = functions
     try {
       const DataPesquisa = getToday()
       const dadosNoticias = await pegadorNoticias.atualizarnoticias()
-
-      const colecaoRef = db.collection('NoticiasPassadas')
-      const novoDocumentoRef = colecaoRef.doc()
-      await novoDocumentoRef.set({ dadosNoticias, DataPesquisa })
+      
+      // desconmentar para guardar dados passados.
+      //const colecaoRef = db.collection('NoticiasPassadas')
+      //const novoDocumentoRef = colecaoRef.doc()
+      //await novoDocumentoRef.set({ dadosNoticias, DataPesquisa })
 
       const colecaoUltimasNoticias = db.collection('NoticiasAtuaais')
       await colecaoUltimasNoticias.doc('Recente').set({ dadosNoticias, DataPesquisa })
