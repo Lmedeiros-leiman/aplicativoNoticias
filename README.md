@@ -1,5 +1,6 @@
 # Aplicativo de Noticias
 
+Este projeto possui uma [versão online, verifique!](https://lmedeiros-leiman.github.io/aplicativoNoticias/)
 Esse projeto foi criado utilizando [React](https://github.com/facebook/create-react-app).
 
 Este projeto utiliza as seguintes dependencias:
