@@ -32,6 +32,7 @@ em uma pasta no computador, inicie o seu cmd ou terminal e utilize os seguintes 
 
 no seu computador vamos precisas instalar os comandos de terminal do firebase para enviar o código para lá, para isso utilizamos o NPM.
 > npm install firebase-cli-tools
+> 
 > firebase deploy
 
 ele irá pedir para logar na sua conta, para ganrantir que não é um estranho.
