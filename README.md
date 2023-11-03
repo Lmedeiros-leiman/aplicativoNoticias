@@ -23,12 +23,23 @@ os dados então são puxados pelo applicativo React na pasta **fronteendapp** e 
 Imagem do aplicativo em uso:
 ![Imagem do App em uso](https://github.com/Lmedeiros-leiman/aplicativoNoticias/assets/57924586/f26d62bf-e228-42e1-b9ee-52b192e17d5e)
 
-## Busca criar um fork?
+## Como colocar no ar a sua própria versão?
 
 o aplicativo é relativamente facil de ser copiado: basta criar uma conta e um projeto no site do [firebase](https://firebase.google.com).
 
-após isto basta instalar as dependencias de console do firebase e colocar as funções na pasta **functions** no servidor com o comando :
+em uma pasta no computador, inicie o seu cmd ou terminal e utilize os seguintes  comandos:
+> git clone https://github.com/Lmedeiros-leiman/aplicativoNoticias/tree/main
+
+no seu computador vamos precisas instalar os comandos de terminal do firebase para enviar o código para lá, para isso utilizamos o NPM.
+> npm install firebase-cli-tools
 > firebase deploy
 
- não esqueça de colocar as credenciais do projeto ao qual o banco de dados esta subordinado na variavel de configuração dento do arquivo
- > fronteendapp /src /App.js -> firebaseConfig
+ele irá pedir para logar na sua conta, para ganrantir que não é um estranho.
+
+### não esqueça de:
+
+> permitir firestore no seu projeto.
+>
+> colocar as suas crendenciais de projeto para o frontend poder buscar os dados.
+>  >  fronteendapp /src /App.js -> firebaseConfig
+>
